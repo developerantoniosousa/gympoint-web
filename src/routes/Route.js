@@ -5,13 +5,15 @@ import PropTypes from 'prop-types';
 import DefaultLayout from '../pages/_layouts/default';
 import AuthLayout from '../pages/_layouts/auth';
 
+import store from '~/store';
+
 export default function RouteWrapper({
   component: Component,
   isPrivate,
   ...rest
 }) {
 
-  const signed = false;
+  const signed = !!store.getState().auth.token;
 
   if (!signed && isPrivate) {
     return <Redirect to="/" />
@@ -38,5 +40,5 @@ RouteWrapper.defaultProps = {
 
 RouteWrapper.propTypes = {
   isPrivate: PropTypes.bool,
-  component: PropTypes.element.isRequired,
+  component: PropTypes.oneOfType([PropTypes.func, PropTypes.element]).isRequired,
 }
