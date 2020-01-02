@@ -29,6 +29,15 @@
     "no-param-reassign": "off",
     "global-require": "off",
     "import/no-extraneous-dependencies": "off",
-    "react/jsx-props-no-spreading": "off"
+    "react/jsx-props-no-spreading": "off",
+    "no-console": "off"
+  },
+  "settings": {
+    "import/resolver": {
+      "babel-plugin-root-import": {
+        "rootPathSuffix": "src",
+        "rootPathPreffix": "~"
+      }
+    }
   }
 }

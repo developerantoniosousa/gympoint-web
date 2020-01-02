@@ -22,6 +22,12 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
+
+    span {
+      color: #c0392b;
+      text-align: center;
+      margin-bottom: 15px;
+    }
   }
 
   button {
