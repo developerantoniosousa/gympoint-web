@@ -1,9 +1,14 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 
-// import { Container } from './styles';
+import Routes from './routes';
+import GlobalStyle from './styles/global';
 
 export default function App() {
   return (
-    <div />
+    <BrowserRouter>
+      <Routes />
+      <GlobalStyle />
+    </BrowserRouter>
   );
 }
