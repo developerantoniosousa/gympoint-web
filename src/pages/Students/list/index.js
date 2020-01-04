@@ -37,8 +37,12 @@ export default function Students() {
 
   }
 
-  function handleDeleteStudent(id) {
+  async function handleDeleteStudent(id) {
+    await api.delete(`/students/${id}`);
 
+    setStudents(
+      students.filter(student => student.id !== id)
+    );
   }
 
   return (
