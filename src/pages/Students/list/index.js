@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Form } from '@rocketseat/unform';
+
+import api from '~/services/api';
 
 import Container from '~/components/Container';
 import Content from '~/components/Content';
@@ -9,10 +11,33 @@ import Input from '~/components/Input';
 import Row from '~/components/Row';
 import { AgeHead, AgeColumn } from './styles';
 
-const range = [1, 2, 3, 5, 4, 6, 7, 8, 9, 10, 0];
-
 export default function Students() {
+  const [students, setStudents] = useState([]);
+  const [search, setSearch] = useState('');
+
+  async function loadStudents() {
+    const response = await api.get('/students', {
+      params: {
+        q: search
+      }
+    });
+
+    setStudents(response.data);
+  }
+
+  useEffect(() => {
+    loadStudents();
+  }, [search]);
+
   function handleAddStudent() {
+
+  }
+
+  function handleEditStudent(id) {
+
+  }
+
+  function handleDeleteStudent(id) {
 
   }
 
@@ -26,8 +51,8 @@ export default function Students() {
             <Input
               name="search"
               type="search"
-              value=""
-              onChange={() => { }}
+              value={search}
+              onChange={e => setSearch(e.target.value)}
               placeholder="Buscar aluno"
               style={{ width: 237, height: 36, margin: 0, marginLeft: 16 }}
             />
@@ -45,15 +70,23 @@ export default function Students() {
             </tr>
           </thead>
           <tbody>
-            {range.map(range => (<tr key={range}>
-              <td>Cha Ji-Hun</td>
-              <td>example@rocketseat.c</td>
-              <AgeColumn>20</AgeColumn>
-              <td>
-                <button type="button" className="info">editar</button>
-                <button type="button" className="danger">apagar</button>
-              </td>
-            </tr>))}
+            {students.map(student => (
+              <tr key={student.id}>
+                <td>{student.name}</td>
+                <td>{student.email}</td>
+                <AgeColumn>{student.age}</AgeColumn>
+                <td>
+                  <button
+                    type="button"
+                    className="info"
+                    onClick={() => handleEditStudent(student.id)}>editar</button>
+                  <button
+                    type="button"
+                    className="danger"
+                    onClick={() => handleDeleteStudent(student.id)}>apagar</button>
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </Content>
