@@ -4,7 +4,7 @@ import { Switch } from 'react-router-dom';
 import Route from './Route';
 
 import SignIn from '../pages/SignIn';
-import Students from '../pages/Students';
+import Students from '../pages/Students/list';
 
 export default function Routes() {
   return (

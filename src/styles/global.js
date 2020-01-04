@@ -20,6 +20,7 @@ export default createGlobalStyle`
   }
 
   body {
+    background: #F2F2F2;
     -webkit-font-smoothing: antialiased !important;
   }
 
@@ -37,5 +38,56 @@ export default createGlobalStyle`
 
   button {
     cursor: pointer;
+  }
+
+  table {
+    width: 100%;
+
+    thead {
+      tr {
+        th {
+          font-style: normal;
+          font-weight: bold;
+          font-size: 16px;
+          line-height: 19px;
+          color: #444;
+          text-align: left;
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        height: 30px;
+        td {
+          font-style: normal;
+          font-weight: normal;
+          font-size: 16px;
+          line-height: 20px;
+          color: #666;
+
+          button {
+            border: none;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 15px;
+            line-height: 18px;
+            margin: 0 12px;
+
+            &.info {
+              color: #4D85EE;
+            }
+
+            &.danger {
+              color: #DE3B3B;
+            }
+          }
+
+          &:last-child {
+            text-align: right;
+          }
+        }
+      }
+    }
   }
 `;
