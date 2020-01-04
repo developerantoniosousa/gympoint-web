@@ -5,7 +5,7 @@ export default reducers => {
   const persistedReducer = persistReducer({
     key: 'gympoint',
     storage,
-    whitelist: ['auth']
+    whitelist: ['auth', 'user']
   }, reducers);
 
   return persistedReducer;
