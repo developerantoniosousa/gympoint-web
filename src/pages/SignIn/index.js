@@ -7,7 +7,8 @@ import logo from '../../assets/images/logo.svg';
 
 import { signInRequest } from '~/store/modules/auth/actions';
 
-import Input from '../../components/Input';
+import Input from '~/components/Input';
+import Button from '~/components/Button';
 import { Container } from './styles';
 
 const schema = Yup.object().shape({
@@ -30,7 +31,7 @@ export default function SignIn() {
       <Form schema={schema} onSubmit={handleSubmit}>
         <Input name="email" type="email" onChange={() => { }} placeholder="exemplo@email.com" />
         <Input name="password" type="password" onChange={() => { }} placeholder="***********" />
-        <button type="submit">{loading ? 'Carregando...' : 'Entrar no sistema'}</button>
+        <Button type="submit">{loading ? 'Carregando...' : 'Entrar no sistema'}</Button>
       </Form>
     </Container>
   );
