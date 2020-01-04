@@ -12,6 +12,10 @@ export default function userReducer(state = INITIAL_STATE, action) {
         draft.user = user;
         break;
       }
+      case '@auth/SIGN_OUT': {
+        draft.user = null;
+        break;
+      }
       default:
     }
   })
