@@ -1,5 +1,4 @@
 import React from 'react';
-import { Form } from '@rocketseat/unform';
 import { useDispatch, useSelector } from 'react-redux';
 import * as Yup from 'yup';
 
@@ -7,6 +6,7 @@ import logo from '../../assets/images/logo.svg';
 
 import { signInRequest } from '~/store/modules/auth/actions';
 
+import Form from '~/components/Form';
 import Input from '~/components/Input';
 import Button from '~/components/Button';
 import { Container } from './styles';
@@ -29,7 +29,9 @@ export default function SignIn() {
     <Container>
       <img src={logo} alt="Gympoint" />
       <Form schema={schema} onSubmit={handleSubmit}>
+        <strong>SEU E-MAIL</strong>
         <Input name="email" type="email" onChange={() => { }} placeholder="exemplo@email.com" />
+        <strong>SUA SENHA</strong>
         <Input name="password" type="password" onChange={() => { }} placeholder="***********" />
         <Button type="submit">{loading ? 'Carregando...' : 'Entrar no sistema'}</Button>
       </Form>
