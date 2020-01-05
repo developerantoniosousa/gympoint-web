@@ -34,7 +34,7 @@ export default function Students() {
   }
 
   function handleEditStudent(id) {
-
+    history.push(`/students/update/${id}`);
   }
 
   async function handleDeleteStudent(id) {
