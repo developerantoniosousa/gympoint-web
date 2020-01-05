@@ -22,10 +22,10 @@ export default function Header() {
       <div>
         <img src={logo} alt="Gympoint" />
         <ul>
-          <li><Link to="/">ALUNOS</Link></li>
-          <li><Link to="/">PLANOS</Link></li>
-          <li><Link to="/">MATRÍCULAS</Link></li>
-          <li><Link to="/">PEDIDOS DE AUXÍLIO</Link></li>
+          <li><Link to="/students">ALUNOS</Link></li>
+          <li><Link to="/plans">PLANOS</Link></li>
+          <li><Link to="/registrations">MATRÍCULAS</Link></li>
+          <li><Link to="/helps">PEDIDOS DE AUXÍLIO</Link></li>
         </ul>
       </div>
       <User>
