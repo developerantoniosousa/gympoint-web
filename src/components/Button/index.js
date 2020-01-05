@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 
 import { Container } from './styles';
 
-export default function Button({ children, size }) {
+export default function Button({ children, size, type, onClick }) {
   return (
-    <Container size={size}>
+    <Container type={type} size={size} onClick={onClick}>
       {children}
     </Container>
   );
@@ -13,9 +13,13 @@ export default function Button({ children, size }) {
 
 Button.defaultProps = {
   size: 'large',
+  type: 'button',
+  onClick: () => { },
 }
 
 Button.propTypes = {
   children: PropTypes.string.isRequired,
   size: PropTypes.string,
+  type: PropTypes.string,
+  onClick: PropTypes.func,
 }
