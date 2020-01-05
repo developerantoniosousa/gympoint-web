@@ -43,7 +43,7 @@ export default function UpdateStudent({ match }) {
   }
 
   return (
-    <Container>
+    <Container size="medium">
       <Form initialData={student} schema={schema} onSubmit={handleSubmit}>
         <Row>
           <Heading>Edição de aluno</Heading>

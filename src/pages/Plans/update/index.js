@@ -53,7 +53,7 @@ export default function Updateplan({ match }) {
   );
 
   return (
-    <Container>
+    <Container size="medium">
       <Form initialData={plan} schema={schema} onSubmit={handleSubmit}>
         <Row>
           <Heading>Edição de plano</Heading>

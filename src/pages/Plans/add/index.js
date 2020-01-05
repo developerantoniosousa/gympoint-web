@@ -40,7 +40,7 @@ export default function AddPlan() {
   );
 
   return (
-    <Container>
+    <Container size="medium">
       <Form schema={schema} onSubmit={handleSubmit}>
         <Row>
           <Heading>Cadastro de plano</Heading>

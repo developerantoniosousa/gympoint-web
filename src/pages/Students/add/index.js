@@ -31,7 +31,7 @@ export default function AddStudent() {
   }
 
   return (
-    <Container>
+    <Container size="medium">
       <Form schema={schema} onSubmit={handleSubmit}>
         <Row>
           <Heading>Cadastro de aluno</Heading>
