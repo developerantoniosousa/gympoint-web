@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { Form } from '@rocketseat/unform';
 
 import api from '~/services/api';
+import history from '~/services/history';
 
 import Container from '~/components/Container';
 import Content from '~/components/Content';
@@ -30,7 +30,7 @@ export default function Students() {
   }, [search]);
 
   function handleAddStudent() {
-
+    history.push('/students/add');
   }
 
   function handleEditStudent(id) {
@@ -47,22 +47,20 @@ export default function Students() {
 
   return (
     <Container>
-      <Form>
+      <Row>
+        <Heading>Gerenciando alunos</Heading>
         <Row>
-          <Heading>Gerenciando alunos</Heading>
-          <Row>
-            <Button type="submit" size="medium" onClick={handleAddStudent}>CADASTRAR</Button>
-            <Input
-              name="search"
-              type="search"
-              value={search}
-              onChange={e => setSearch(e.target.value)}
-              placeholder="Buscar aluno"
-              style={{ width: 237, height: 36, margin: 0, marginLeft: 16 }}
-            />
-          </Row>
+          <Button type="button" size="medium" onClick={handleAddStudent}>CADASTRAR</Button>
+          <Input
+            name="search"
+            type="search"
+            value={search}
+            onChange={e => setSearch(e.target.value)}
+            placeholder="Buscar aluno"
+            style={{ width: 237, height: 36, margin: 0, marginLeft: 16 }}
+          />
         </Row>
-      </Form>
+      </Row>
       <Content>
         <table>
           <thead>
