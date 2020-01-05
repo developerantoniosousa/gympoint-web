@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 import api from '~/services/api';
 import history from '~/services/history';
+import { formatPrice } from '~/util/format';
 
 import Container from '~/components/Container';
 import Content from '~/components/Content';
@@ -16,7 +17,14 @@ export default function Plans() {
   useEffect(() => {
     (async () => {
       const response = await api.get('/plans');
-      setPlans(response.data);
+
+      const data = response.data.map(plan => ({
+        ...plan,
+        price: formatPrice(plan.price),
+        duration: `${plan.duration} ${plan.duration > 1 ? 'meses' : 'mês'}`
+      }));
+
+      setPlans(data);
     })();
   }, []);
 

@@ -96,7 +96,7 @@ export default function Updateplan({ match }) {
             </Column>
             <Column>
               <strong>PREÇO TOTAL</strong>
-              <p>{totalPrice}</p>
+              <Input name="" readOnly value={totalPrice} />
             </Column>
           </Row>
         </Content>
