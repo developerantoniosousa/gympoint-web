@@ -3,7 +3,7 @@ import { Input } from '@rocketseat/unform';
 
 export const TInput = styled(Input)`
   align-self: stretch;
-  background: #FFFFFF;
+  background: ${({ readOnly }) => readOnly ? '#F5F5F5' : '#FFFFFF'};
   border: 1px solid #DDDDDD;
   border-radius: 4px;
   margin-bottom: 15px;
