@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 import { darken } from 'polished';
 
-function getSize(size) {
+function setSize(size) {
   switch (size) {
     case 'small': {
       return css`
@@ -30,16 +30,35 @@ function getSize(size) {
   }
 }
 
+function setState(state) {
+  switch (state) {
+    case 'secundary': {
+      return css`
+        background: #CCCCCC;
+
+        &:hover {
+          background: ${darken(0.04, '#CCCCCC')};
+        }
+      `;
+    }
+    default: {
+      return css`
+        background: #EE4D64;
+
+        &:hover {
+          background: ${darken(0.04, '#EE4D64')};
+        }
+      `;
+    }
+  }
+}
+
 export const Container = styled.button`
-  background: #EE4D64;
   color: #FFF;
   border: 0;
   border-radius: 4px;
   font-weight: bold;
   transition: background 0.2s;
-  ${ ({ size }) => getSize(size)};
-
-  &:hover {
-    background: ${ darken(0.04, '#EE4D64')};
-  }
+  ${ ({ size }) => setSize(size)};
+  ${ ({ state }) => setState(state)};
 `;
