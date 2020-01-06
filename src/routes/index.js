@@ -10,6 +10,9 @@ import UpdateStudent from '../pages/Students/update';
 import Plans from '../pages/Plans/list';
 import AddPlan from '../pages/Plans/add';
 import UpdatePlan from '../pages/Plans/update';
+import Registrations from '../pages/Registrations/list';
+import AddRegistration from '../pages/Registrations/add';
+import UpdateRegistration from '../pages/Registrations/update';
 
 export default function Routes() {
   return (
@@ -23,6 +26,10 @@ export default function Routes() {
       <Route exact path="/plans" component={Plans} isPrivate />
       <Route path="/plans/add" component={AddPlan} isPrivate />
       <Route path="/plans/update/:id" component={UpdatePlan} isPrivate />
+
+      <Route exact path="/registrations" component={Registrations} isPrivate />
+      <Route path="/registrations/add" component={AddRegistration} isPrivate />
+      <Route path="/registrations/update/:id" component={UpdateRegistration} isPrivate />
     </Switch>
   );
 }
