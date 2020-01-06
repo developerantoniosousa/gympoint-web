@@ -15,4 +15,13 @@ export const Form = styled(form)`
     color: #c0392b;
     margin-bottom: 15px;
   }
+
+  p {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 26px;
+    color: #666;
+    margin-bottom: 20px;
+  }
 `;

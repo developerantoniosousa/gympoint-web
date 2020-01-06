@@ -13,6 +13,7 @@ import UpdatePlan from '../pages/Plans/update';
 import Registrations from '../pages/Registrations/list';
 import AddRegistration from '../pages/Registrations/add';
 import UpdateRegistration from '../pages/Registrations/update';
+import Helps from '../pages/Helps';
 
 export default function Routes() {
   return (
@@ -30,6 +31,8 @@ export default function Routes() {
       <Route exact path="/registrations" component={Registrations} isPrivate />
       <Route path="/registrations/add" component={AddRegistration} isPrivate />
       <Route path="/registrations/update/:id" component={UpdateRegistration} isPrivate />
+
+      <Route path="/helps" component={Helps} isPrivate />
     </Switch>
   );
 }
